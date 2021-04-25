@@ -1,0 +1,176 @@
+#game {
+	background: darkblue;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+	background-color: darkblue;
+}
+
+div#game-wrap {
+    position: relative;
+}
+
+#upgrade-wrap {
+	position: absolute;
+	display: flex;
+	top: 50px;
+	left: 279px;
+}
+
+#upgrade-wrap > .upgrade {
+	width: 100px;
+	height: 100px;
+	background: url(img/button.png);
+	background-size: cover;
+	border: none;
+	transition: transform .2s;
+	position: relative;
+	cursor: pointer;
+}
+#upgrade-wrap > .upgrade.no-money {
+	filter: grayscale(0.5);
+}
+#upgrade-wrap > .upgrade.no-money:hover {
+	transform: none;
+}
+#upgrade-wrap > .upgrade:hover {
+	transform: scale(1.2, 1.2);
+	transform-origin: center;
+}
+#upgrade-wrap .up-image {
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	top: 0px;
+	left: 10%;
+}
+#tooltip-wrap {
+	background: url(img/tooltip.png);
+	width: 600px;
+	height: 147px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 900;
+	color: #311e00;
+	text-shadow: 0 0 darkred;
+	font-family: arial;
+	text-align: center;
+	padding: 0px 40px;
+}
+#up-name {
+	font-size: 32px;
+}
+.up-cost {
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 2px;
+    font-weight: 900;
+    font-size: 29px;
+    font-family: arial;
+    color: #ffdf43;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+#upgrade-wrap div.gas .up-image {
+	background-image: url(img/gas.png);
+	background-size: cover;
+}
+
+
+.upgrade .up-image {
+	background-image: url(img/upgrades.png);
+	background-size: 900%;
+}
+.oxygen1 .up-image {
+	background-position: -68px 0px;
+}
+.oxygen2 .up-image {
+	background-position: -136px 0px;
+}
+.motor1 .up-image {
+	background-position: 11px -139px;
+}
+.motor2 .up-image {
+	background-position: 2px -214px;
+}
+.motor3 .up-image {
+	background-position: 13px -281px;
+}
+.cargo1 .up-image {
+	background-position: -64px -71px;
+}
+.cargo2 .up-image {
+	background-position: -214px -79px;
+}
+.cargo3 .up-image {
+	background-position: -139px -80px;
+}
+.cargo4 .up-image {
+	background-position: -212px -146px;
+}
+.vert1 .up-image {
+	background-position: -142px -144px;
+}
+.vert2 .up-image {
+	background-position: -144px -215px;
+}
+.vert3 .up-image {
+	background-position: -215px -219px;
+}
+
+.magnet1 .up-image {
+	background-position: -69px -146px;
+}
+.magnet2 .up-image {
+	background-position: -71px -219px;
+}
+
+
+@keyframes showUpgrades {
+  from {
+    opacity: 0;
+	display: flex;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideUpgrades {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+	display: none;
+  }
+}
+
+#upgrade-wrap {
+	animation: showUpgrades 1s;
+	width: 420px;
+	flex-wrap: wrap;
+}
+#upgrade-wrap.hidden {
+	animation: hideUpgrades 1s;
+	animation-fill-mode: forwards;
+}
